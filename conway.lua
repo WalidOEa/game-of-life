@@ -33,8 +33,24 @@ function Conway:reset()
 	end
 end
 
-	
+function Conway:draw()
+	love.graphics.setColor(0, 0, 0)
+	love.graphics.rectangle("fill", 0, 0, WIDTH, HEIGHT)
 
+	love.graphics.setColor(0.5, 0.5, 0.5)
+
+	for row, cols in ipairs(self.board) do
+		for col, value in ipairs(cols) do
+			if value == 1 then
+				local x = (col - 1) * CELL
+				local y = (row - 1) * CELL
+
+				love.graphics.rectangle("fill", x, y, SIZE, SIZE)
+			end
+		end
+	end
+
+end
 
 
 return Conway
