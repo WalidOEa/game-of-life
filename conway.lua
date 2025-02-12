@@ -33,6 +33,14 @@ function Conway:reset()
 	end
 end
 
+function Conway:clear()
+	for row, cols in ipairs(self.board) do
+		for col, _ in ipairs(cols) do
+			self.board[row][col] = 0
+		end
+	end
+end
+
 function Conway:draw()
 	love.graphics.setColor(0, 0, 0)
 	love.graphics.rectangle("fill", 0, 0, WIDTH, HEIGHT)
