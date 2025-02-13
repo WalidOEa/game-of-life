@@ -4,6 +4,10 @@ function love.load()
 	Conway:load()
 end
 
+function love.update()
+	Conway:update()
+end
+
 function love.draw()
 	Conway:draw()
 end
